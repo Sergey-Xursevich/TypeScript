@@ -39,3 +39,37 @@ function sum(num1, num2) {
 }
 mySum = sum;
 console.log(mySum(15, 10));
+var user = {
+    name: 'WFM',
+    age: 50,
+    jobs: ['a', 'b'],
+    getJobs: function () {
+        return this.jobs;
+    },
+    logName: function () {
+        console.log(this.name);
+    }
+};
+var user2 = {
+    name: 'Max',
+    age: 30,
+    jobs: ['2'],
+    getJobs: function () {
+        return this.jobs;
+    },
+    logName: function () {
+        console.log(this.name);
+    }
+};
+/* Специальные типы */
+var Job;
+(function (Job) {
+    Job[Job["Frontend"] = 0] = "Frontend";
+    Job[Job["Backend"] = 50] = "Backend";
+    Job[Job["Designer"] = 51] = "Designer";
+})(Job || (Job = {}));
+;
+var job = Job.Backend;
+console.log(job); //50
+var job2 = Job.Designer;
+console.log(job2); //51
